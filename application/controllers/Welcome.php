@@ -31,6 +31,21 @@ class Welcome extends Application {
         $this->render();
     }
 
+    function shucks()
+    {
+        $this->data['pagebody'] = 'justone';
+
+        $firstAuth = $this->quotes->get(2);
+
+        $this->data['what'] = $firstAuth['what'];
+
+        $this->data['who'] = $firstAuth['who'];
+
+        $this->data['mug'] = $firstAuth['mug'];
+
+        $this->render();
+    }
+
 }
 
 /* End of file Welcome.php */
