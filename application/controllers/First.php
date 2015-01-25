@@ -36,4 +36,19 @@ class First extends Application
 
 		$this->render();
 	}
+
+	function gimme( $arg )
+	{
+		$this->data['pagebody'] = 'justone';
+
+		$firstAuth = $this->quotes->get( $arg );
+
+		$this->data['what'] = $firstAuth['what'];
+
+		$this->data['who'] = $firstAuth['who'];
+
+		$this->data['mug'] = $firstAuth['mug'];
+
+		$this->render();
+	}
 }
