@@ -12,14 +12,11 @@ class Last extends Application
 	function index()
 	{
 		$this->data['pagebody'] = 'justone';
+		$auth = $this->quotes->get(6);
 
-		$firstAuth = $this->quotes->get(6);
-
-		$this->data['what'] = $firstAuth['what'];
-
-		$this->data['who'] = $firstAuth['who'];
-
-		$this->data['mug'] = $firstAuth['mug'];
+		$this->data['what'] = $auth['what'];
+		$this->data['who'] = $auth['who'];
+		$this->data['mug'] = $auth['mug'];
 
 		$this->render();
 	}

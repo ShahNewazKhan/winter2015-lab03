@@ -1,6 +1,6 @@
 <?php
 
-class First extends Application
+class Bingo extends Application
 {
 	function __construct()
 	{
@@ -10,7 +10,7 @@ class First extends Application
 	function index()
 	{
 		$this->data['pagebody'] = 'justone';
-		$auth = $this->quotes->get(1);
+		$auth = $this->quotes->get(5);
 
 		$this->data['what'] = $auth['what'];
 		$this->data['who'] = $auth['who'];
@@ -19,26 +19,14 @@ class First extends Application
 		$this->render();
 	}
 
-	function zzz()
+	function wisdom()
 	{
 		$this->data['pagebody'] = 'justone';
-		$auth = $this->quotes->get(1);
+		$auth = $this->quotes->get(6);
 
 		$this->data['what'] = $auth['what'];
 		$this->data['who'] = $auth['who'];
 		$this->data['mug'] = $auth['mug'];
-
-		$this->render();
-	}
-
-	function gimme( $arg )
-	{
-		$this->data['pagebody'] = 'justone';
-		$firstAuth = $this->quotes->get( $arg );
-
-		$this->data['what'] = $firstAuth['what'];
-		$this->data['who'] = $firstAuth['who'];
-		$this->data['mug'] = $firstAuth['mug'];
 
 		$this->render();
 	}
