@@ -1,7 +1,5 @@
 <?php
-/**
- *
- */
+
 class Last extends Application
 {
 	function __construct()
@@ -14,9 +12,8 @@ class Last extends Application
 		$this->data['pagebody'] = 'justone';
 		$auth = $this->quotes->get(6);
 
-		$this->data['what'] = $auth['what'];
-		$this->data['who'] = $auth['who'];
-		$this->data['mug'] = $auth['mug'];
+		$this->data = array_merge($this->data, $auth);
+
 
 		$this->render();
 	}

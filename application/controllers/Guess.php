@@ -1,7 +1,5 @@
 <?php
-/**
- * 
- */
+
 class Guess extends Application
 {
     /*
@@ -17,9 +15,8 @@ class Guess extends Application
         $this->data['pagebody'] = 'justone';
         $auth = $this->quotes->get(4);
 
-        $this->data['what'] = $auth['what'];
-		$this->data['who'] = $auth['who'];
-		$this->data['mug'] = $auth['mug'];
+        $this->data = array_merge($this->data, $auth);
+
 
 		$this->render();
     }

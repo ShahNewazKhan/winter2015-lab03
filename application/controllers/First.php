@@ -12,9 +12,7 @@ class First extends Application
 		$this->data['pagebody'] = 'justone';
 		$auth = $this->quotes->get(1);
 
-		$this->data['what'] = $auth['what'];
-		$this->data['who'] = $auth['who'];
-		$this->data['mug'] = $auth['mug'];
+		$this->data = array_merge($this->data, $auth);
 
 		$this->render();
 	}
@@ -24,9 +22,8 @@ class First extends Application
 		$this->data['pagebody'] = 'justone';
 		$auth = $this->quotes->get(1);
 
-		$this->data['what'] = $auth['what'];
-		$this->data['who'] = $auth['who'];
-		$this->data['mug'] = $auth['mug'];
+		$this->data = array_merge($this->data, $auth);
+
 
 		$this->render();
 	}
@@ -34,11 +31,10 @@ class First extends Application
 	function gimme( $arg )
 	{
 		$this->data['pagebody'] = 'justone';
-		$firstAuth = $this->quotes->get( $arg );
+		$auth = $this->quotes->get( $arg );
 
-		$this->data['what'] = $firstAuth['what'];
-		$this->data['who'] = $firstAuth['who'];
-		$this->data['mug'] = $firstAuth['mug'];
+		$this->data = array_merge($this->data, $auth);
+
 
 		$this->render();
 	}
