@@ -11,13 +11,13 @@
 */
 
 //Capitalize Hooks
+
 $hook['display_override'][] = array(
 	'class' => '',
 	'function' => 'capitalize',
-	'filename' => 'capitalize.php'
-	'filepath' => 'hooks',
-)
-
+	'filename' => 'capitalize.php',
+	'filepath' => 'hooks'
+);
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
