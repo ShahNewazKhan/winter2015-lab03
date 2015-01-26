@@ -1,5 +1,4 @@
 <?php
-
 function capitalize()
 {
 	$CI =& get_instance();
@@ -33,10 +32,9 @@ function capitalize()
 				$htmlArray[$i] = "<strong>" . $htmlArray[$i] . "</strong>"; 
 			}
 		}
-		//If we a capitalized word in part of the </p> array element enclose in strong tangs
+		//If we encounter a capitalized word in part of the </p> array element enclose in strong tags
 		//and end edit mode
-		else if ( $edit && preg_match('/\/p/', $current) && 
-			      preg_match('/\b([A-Z"]+)\b/', $current))
+		else if ( $edit && preg_match('/\/p/', $current) && preg_match('/\b([A-Z"]+)\b/', $current))
 		{
 			$htmlArray[$i] = "<strong>" . $htmlArray[$i] . "</strong>";
 			$edit = false;
@@ -54,6 +52,7 @@ function capitalize()
 	//Decode html tags
 	$buffer = htmlspecialchars_decode($bufferImploded);
 
+	//Display output with modified strong tags for capitalized words
 	$CI->output->set_output($buffer);
 	$CI->output->_display();
 
